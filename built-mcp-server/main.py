@@ -1,6 +1,12 @@
-def main():
-    print("Hello from built-mcp-server!")
+from mcp.server.fastmap import FastMcp 
 
+app = FastMcp("Demo")
 
-if __name__ == "__main__":
-    main()
+@app.tool()
+def add(x: int, y: int) -> int:
+    """Add two numbers."""
+    return x + y
+
+@app.resource("greeting://{name}") 
+def get_greeting(name: str) -> str:
+    return f"Hello, {name}!"
