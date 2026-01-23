@@ -1,6 +1,7 @@
-from mcp.server.fastmap import FastMcp 
+from mcp.server.fastmcp import FastMCP
 
-app = FastMcp("Demo")
+
+app = FastMCP("Demo")
 
 @app.tool()
 def add(x: int, y: int) -> int:
